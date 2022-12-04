@@ -1,0 +1,57 @@
+<%- include('partials/header') -%> 
+<div>
+<!---->
+<form action="/post/uploadVideo" enctype="multipart/form-data" method="POST">
+    <div class="mb-3">
+        <label for="title" class="form-label">Video Title</label>
+        <input type="text" class="form-control" id="title" name="name">
+    </div>
+
+   <div class="mb-3">
+    
+    
+      <a class="btn btn-primary accept" href="/chat">
+      Chat
+        </a>
+   
+    
+   
+  
+      <label for="imgUpload" class="form-label">Video</label>
+      <input type="file" class="form-control" name="file">
+    </div>
+    <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+  </form>
+  <ul>
+    <%for (let i=0; uploads.length > i; i++) { %>
+          <li>
+            <video width="320" height="240" controls>
+                <source src="<%= uploads[i].url %>" type="video/mp4">
+            </video>
+          </li>
+      <%}%>
+        </ul>
+        <section class="overflow-hidden text-gray-700 ">
+          <%for (let i=0; i < uploads.length; i++) { %>
+          <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
+            <div class="flex flex-wrap -m-1 md:-m-2">
+              <div class="flex flex-wrap w-1/3">
+                
+                
+                 
+                    <h2><%= uploads[i].url %></h2>
+                  <div class="w-full p-1 md:p-2">
+                  <video controls>
+                    <source src="<%= uploads[i].url %>" type="video/mp4">
+                  </video>
+                  </div>
+                
+                
+             
+              </div>
+            </div>
+          </div>
+            <%}%>  
+        </section>
+</div>
+

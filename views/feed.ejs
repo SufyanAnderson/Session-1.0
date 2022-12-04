@@ -1,0 +1,52 @@
+<%- include('partials/header') -%>
+  <!-- <div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <h2><%= posts[i].title %></h2>
+              <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+          </li>
+       
+        <% } %>
+        </ul>
+      
+    </div>
+  </div>   -->
+
+
+
+
+
+
+  <ul>
+    <% for(let i=0; i < posts.length; i++) {%>
+    <li>
+        <div aria-label="group of cards" tabindex="0" class="focus:outline-none py-8 w-full">
+            <div class="lg:flex items-center justify-center w-full">
+                <div tabindex="0" aria-label="card 1" class="focus:outline-none lg:w-4/12 lg:mr-7 lg:mb-0 mb-7 bg-white dark:bg-gray-800  p-6 shadow rounded">
+                    <div class="flex items-center border-b border-gray-200 dark:border-gray-700  pb-6">
+                      <a href="/post/<%= posts[i]._id%>">
+                        <img src="<%= posts[i].image%>" alt="coin avatar" class="w-12 h-12 rounded-full" />
+                        <div class="flex items-start justify-between w-full">
+                            <div class="pl-3 w-full">
+                                <p tabindex="0" class="focus:outline-none text-xl font-medium leading-5 text-gray-800 dark:text-black "><%= posts[i].title %></p>
+                                <p tabindex="0" class="focus:outline-none text-sm leading-normal pt-2 text-gray-500 dark:text-gray-200 ">36 members</p>
+                            </div>
+                          </a>
+                           
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <p tabindex="0" class="focus:outline-none text-sm leading-5 py-4 text-gray-600 dark:text-gray-200 "><%= posts[i].caption %></p>
+                        <div tabindex="0" class="focus:outline-none flex">
+
+                        </div>
+                    </div>
+                </div>
+              </li>
+              <% } %>
+              </ul>
+<%- include('partials/footer') -%>
